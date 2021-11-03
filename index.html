@@ -26,7 +26,7 @@
             {
                 const api_link = "https://api.openweathermap.org/data/2.5/weather";
                 const api_key = "appid=2ec747d2c8bcb1bbc4fa282babe9f54d";
-                axios.get(`${api_link}?q${cityName}&${api_key}`)
+                axios.get(`${api_link}?q=${cityName}&${api_key}`)
                 .then(
                     function(response){
                         console.log(resonse.data);
