@@ -30,7 +30,8 @@
                 .then(
                     function(response){
                         const temp_celsius = response.data.main.temp;
-                        document.getElementById("result").innerHTML = temp_celsius;
+                        const kelvin_unit = 273;
+                        document.getElementById("result").innerHTML = temp_celsius - kelvin_unit;
                 }
                 )
                 .catch(function(error){
