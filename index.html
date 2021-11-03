@@ -20,7 +20,18 @@
         function checkWeather() {
             const cityName = document.getElementById("cityName").value;
             if (cityName == "") {
-
+                alert("City Name field can not be blank");
+            }
+            else
+            {
+                const api_link = "https://api.openweathermap.org/data/2.5/weather";
+                const api_key = "appid=2ec747d2c8bcb1bbc4fa282babe9f54d";
+                axios.get(`${api_link}?q${cityName}&${api_key}`)
+                .then(
+                    function(response){
+                        console.log(resonse.data);
+                }
+                )
             }
         }
 
@@ -31,7 +42,7 @@
             <label for="city">City</label>
             <input type="text" class="form-control" id="cityName" placeholder="Enter City Name">
         </div>
-        <button type="button" class="btn btn-primary my-1">Check Weather</button>
+        <button type="button" class="btn btn-primary my-1" onclick="checkWeather()">Check Weather</button>
         <table class="table my-1">
             <thead>
               <tr>
