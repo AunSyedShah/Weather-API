@@ -29,7 +29,8 @@
                 axios.get(`${api_link}?q=${cityName}&${api_key}`)
                 .then(
                     function(response){
-                        console.log(response );
+                        const temp_celsius = response.data.main.temp;
+                        document.getElementById("result").innerHTML = temp_celsius;
                 }
                 )
                 .catch(function(error){
