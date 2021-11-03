@@ -29,9 +29,10 @@
                 axios.get(`${api_link}?q=${cityName}&${api_key}`)
                 .then(
                     function(response){
-                        const temp_celsius = response.data.main.temp;
+                        const temp_kelvin = response.data.main.temp;
                         const kelvin_unit = 273;
-                        document.getElementById("result").innerHTML = temp_celsius - kelvin_unit;
+                        const temp_celsius = temp_kelvin - kelvin_unit;
+                        document.getElementById("result").innerHTML = temp_celsius;
                 }
                 )
                 .catch(function(error){
